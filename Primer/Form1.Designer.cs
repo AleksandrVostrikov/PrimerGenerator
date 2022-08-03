@@ -34,6 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tbAnswers = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.Task.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -57,9 +58,9 @@
             // 
             this.generateButton.Location = new System.Drawing.Point(12, 12);
             this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(75, 38);
+            this.generateButton.Size = new System.Drawing.Size(108, 38);
             this.generateButton.TabIndex = 2;
-            this.generateButton.Text = "Generate";
+            this.generateButton.Text = "Addition";
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -67,7 +68,7 @@
             // 
             this.Task.Controls.Add(this.tabPage1);
             this.Task.Controls.Add(this.tabPage2);
-            this.Task.Location = new System.Drawing.Point(103, 12);
+            this.Task.Location = new System.Drawing.Point(139, 12);
             this.Task.Name = "Task";
             this.Task.SelectedIndex = 0;
             this.Task.Size = new System.Drawing.Size(200, 309);
@@ -106,13 +107,24 @@
             this.tbAnswers.Size = new System.Drawing.Size(183, 280);
             this.tbAnswers.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 39);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Subtraction";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Primer.Properties.Resources.main_new_back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(324, 333);
+            this.ClientSize = new System.Drawing.Size(351, 333);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Task);
             this.Controls.Add(this.generateButton);
             this.DoubleBuffered = true;
@@ -134,6 +146,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox tbAnswers;
+        private System.Windows.Forms.Button button1;
     }
 }
 

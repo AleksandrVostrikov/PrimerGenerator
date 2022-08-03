@@ -16,16 +16,32 @@ namespace Primer
         }
         private void FillTextboxesAddition()
         {
-            int[] a = { 1, 100 };
-            int[] b = { 1, 100 };
-            int[] c = { 1, 100 };
+            int[] a = { 10, 50 };
+            int[] c = { 10, 0 };
             int quantity = 10;
             string mathProblem = "";
             string mathProblemWithAnswers = "";
             SimpleCalculator rand = new SimpleCalculator();
             for (int i = 0; i < quantity; i++)
             {
-                string[] middle = rand.GetAddition(a, b, c);
+                string[] middle = rand.GetAddition(a, c);
+                mathProblem += middle[1];
+                mathProblemWithAnswers += middle[0];
+            }
+            tbProblems.Text = mathProblem;
+            tbAnswers.Text = mathProblemWithAnswers;
+        }
+        private void FillTextboxesSubtraction()
+        {
+            int[] a = { 10, 100 };
+            int[] c = { 10,  0};
+            int quantity = 10;
+            string mathProblem = "";
+            string mathProblemWithAnswers = "";
+            SimpleCalculator rand = new SimpleCalculator();
+            for (int i = 0; i < quantity; i++)
+            {
+                string[] middle = rand.GetSubtraction(a, c);
                 mathProblem += middle[1];
                 mathProblemWithAnswers += middle[0];
             }
@@ -33,5 +49,9 @@ namespace Primer
             tbAnswers.Text = mathProblemWithAnswers;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FillTextboxesSubtraction();
+        }
     }
 }

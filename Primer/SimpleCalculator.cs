@@ -20,14 +20,14 @@ namespace Primer
             }
             return randomvalue;
         }
-        public string[] GetAddition(int[] firstNumber, int[] secondNumber, int[] thirdNumber)
+        public string[] GetAddition(int[] range, int[] answer)
         {
             string[] addition = { "", "" };
             int a, b, result;
             Random randomGenerator = new Random(GetRandom());
-            if (thirdNumber[1] != 0)
+            if (answer[1] != 0)
             {
-                result = randomGenerator.Next(thirdNumber[0], thirdNumber[1]);
+                result = randomGenerator.Next(answer[0], answer[1]);
                 a = randomGenerator.Next(0, result);
                 b = result - a;
                 addition[0] += a + " + " + b + " = " + result + Environment.NewLine;
@@ -35,15 +35,48 @@ namespace Primer
             }
             else
             {
-                a = randomGenerator.Next(firstNumber[0], firstNumber[1]);
-                b = randomGenerator.Next(secondNumber[0], secondNumber[1]);
+                a = randomGenerator.Next(range[0], range[1]);
+                b = randomGenerator.Next(range[0], range[1]);
                 result = a + b;
                 addition[0] += a + " + " + b + " = " + result + Environment.NewLine;
                 addition[1] += a + " + " + b + " = " + "[   ]" + Environment.NewLine;
             }
             return addition;
         }
+        public string[] GetSubtraction(int[] range, int[] answer)
+        {
+            string[] addition = { "", "" };
+            int a, b, result;
+            Random randomGenerator = new Random(GetRandom());
+            if (answer[1] != 0)
+            {
+                result = randomGenerator.Next(answer[0], answer[1]);
+                b = randomGenerator.Next(0, result);
+                a = result + b;
+                addition[0] += a + " - " + b + " = " + result + Environment.NewLine;
+                addition[1] += a + " - " + b + " = " + "[   ]" + Environment.NewLine;
+            }
+            else
+            {
+                a = randomGenerator.Next(range[0], range[1]);
+                b = randomGenerator.Next(range[0], range[1]);
+                if (b >= a)
+                {
+                    result = b - a;
+                    addition[0] += b + " - " + a + " = " + result + Environment.NewLine;
+                    addition[1] += b + " - " + a + " = " + "[   ]" + Environment.NewLine;
+                }
+                else
+                {
+                    result = a - b;
+                    addition[0] += a + " - " + b + " = " + result + Environment.NewLine;
+                    addition[1] += a + " - " + b + " = " + "[   ]" + Environment.NewLine;
+                }
+            }
+            return addition;
+        }
 
-        
+
+
     }
 }
