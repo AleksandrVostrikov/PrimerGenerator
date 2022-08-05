@@ -20,6 +20,7 @@ namespace Primer
             }
             return randomvalue;
         }
+        
         public string[] GetAddition(int[] range, int[] answer)
         {
             string[] addition = { "", "" };
